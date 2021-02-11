@@ -40,7 +40,6 @@ class Exposure:
         for c in columns: protein.matrix[c] = np.nan
         # Compute residues exposure
         exp_cb = HSExposure.HSExposureCB(protein.structure[0])
-
         for key in exp_cb.keys():
             res_chain = key[0]
             res_number = key[1][1]

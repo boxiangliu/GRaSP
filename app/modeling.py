@@ -56,6 +56,7 @@ class Interactions:
         self.atom_types = read_atom_types(data_dir)
 
     def compute_interactions(self, protein):
+
         # Insert new columns in protein matrix
         columns = ['aromatic_stacking','dissulfide_bridge','hydrogen_bond',
                         'hydrophobic', 'repulsive', 'salt_bridge']
@@ -137,6 +138,7 @@ class Layer:
     # Generate the data to respective layers
     #########################################################
     def compute_layer(self, protein, layers):
+
         # list of data frames with layers information
         layer_df = []
         for l in range(layers):
@@ -158,6 +160,7 @@ class Layer:
             neighbors = set()
             # compute the same for each neighbor
             for n in residue_graph.neighbors(residue_node):
+
                 neighbors = neighbors | self.compute_neighbor_layer(residue_graph, n, layer-1)
             return list(neighbors)
 

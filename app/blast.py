@@ -14,6 +14,7 @@ class BLAST:
     # In: Protein instance
     # Out: list with pdb_id from templates
     ###################################################
+
     def run(self, query):
         # increase evalue to get mor templates
         num_templates = 0
